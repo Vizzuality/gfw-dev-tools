@@ -60,6 +60,12 @@
                     map.setOptions({styles: null});
                 }
             }
+                var Terrain = function(){
+                    this.Terrain = function(){
+                        map.setMapTypeId(google.maps.MapTypeId.TERRAIN);
+                        map.setOptions({styles: null});
+                    }
+                }
             var Satellite = function(){
                 this.Satellite = function(){
                     map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
@@ -93,6 +99,7 @@
             gui  = new dat.GUI();
             var bl = gui.addFolder("Basemap Style");
             bl.add(new Road(), 'Road');
+            bl.add(new Terrain(), 'Terrain');
             bl.add(new Satellite(), 'Satellite');
             bl.add(new Soft(), 'Soft').name('Soft toned');
             bl.add(new Forest(), 'Forest').name('Forest height');
